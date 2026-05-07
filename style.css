@@ -52,26 +52,24 @@ body {
   backdrop-filter: blur(15px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 35px;
-  padding: 35px 25px;
+  padding: 35px 20px;
   text-align: center;
   position: relative;
   z-index: 5;
-  box-shadow:
-    0 10px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
   animation: fadeUp 1s ease;
 }
 
 
 .logo-box {
-  width: 140px;
-  height: 140px;
+  width: clamp(100px, 30vw, 140px);
+  height: clamp(100px, 30vw, 140px);
   margin: auto;
   border-radius: 50%;
   overflow: hidden;
   background: white;
   padding: 10px;
-  box-shadow:
-    0 0 30px rgba(34, 197, 94, 0.5);
+  box-shadow: 0 0 30px rgba(34, 197, 94, 0.5);
 }
 
 .logo-box img {
@@ -81,23 +79,22 @@ body {
 }
 
 
-
 h1 {
   margin-top: 20px;
-  font-size: 42px;
+  font-size: clamp(28px, 8vw, 42px);
   font-weight: 800;
 }
 
 .desc {
   margin-top: 15px;
-  font-size: 20px;
+  font-size: clamp(16px, 4.5vw, 20px);
   line-height: 1.8;
   color: #e5e7eb;
 }
 
 .services {
   margin-top: 15px;
-  font-size: 15px;
+  font-size: clamp(13px, 3.5vw, 15px);
   color: #d1d5db;
   line-height: 2;
 }
@@ -127,12 +124,12 @@ h1 {
   margin-top: 35px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
+  gap: clamp(8px, 2.5vw, 15px);
 }
 
 .social-card {
-  width: 70px;
-  height: 70px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
   background: rgba(255, 255, 255, 0.08);
   border-radius: 22px;
   display: flex;
@@ -140,7 +137,7 @@ h1 {
   align-items: center;
   text-decoration: none;
   color: white;
-  font-size: 28px;
+  font-size: clamp(20px, 6vw, 28px);
   transition: .4s;
   border: 1px solid rgba(255,255,255,.08);
 }
@@ -161,7 +158,7 @@ h1 {
 }
 
 .app-card img {
-  width: 110px;
+  width: clamp(80px, 25vw, 110px);
   border-radius: 25px;
   background: white;
   padding: 8px;
@@ -169,13 +166,14 @@ h1 {
 
 .app-info h2 {
   margin-top: 15px;
-  font-size: 28px;
+  font-size: clamp(20px, 6vw, 28px);
 }
 
 .app-info p {
   margin-top: 10px;
   color: #d1d5db;
   line-height: 1.8;
+  font-size: clamp(13px, 3.5vw, 15px);
 }
 
 
@@ -198,12 +196,16 @@ h1 {
   padding: 12px 22px;
   border-radius: 40px;
   font-weight: bold;
-  font-size: 15px;
+  font-size: clamp(13px, 3.5vw, 15px);
   transition: .4s;
+  flex: 1 1 130px;
+  justify-content: center;
+  min-width: 0;
 }
 
 .download-btn i {
-  font-size: 18px;
+  font-size: clamp(15px, 4vw, 18px);
+  flex-shrink: 0;
 }
 
 .download-btn:hover {
@@ -228,44 +230,37 @@ h1 {
 
 
 @keyframes fadeUp {
-
   from {
     opacity: 0;
     transform: translateY(40px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
   }
-
 }
 
 
-@media (max-width: 480px) {
-
-  h1 {
-    font-size: 35px;
-  }
-
-  .desc {
-    font-size: 18px;
-  }
-
-  .social-card {
-    width: 65px;
-    height: 65px;
-    font-size: 24px;
+/* شاشات صغيرة جداً - أقل من 360px */
+@media (max-width: 360px) {
+  .container {
+    padding: 25px 14px;
+    border-radius: 25px;
   }
 
   .download-buttons {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
   }
 
   .download-btn {
     width: 100%;
-    justify-content: center;
   }
+}
 
+/* شاشات متوسطة - 361px إلى 480px */
+@media (min-width: 361px) and (max-width: 480px) {
+  .container {
+    padding: 30px 16px;
+  }
 }
