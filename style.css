@@ -179,16 +179,31 @@ h1 {
 }
 
 
-.download-btn {
-  display: inline-block;
+/* ---- Download Buttons ---- */
+.download-buttons {
   margin-top: 20px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   background: white;
   color: #111827;
   text-decoration: none;
-  padding: 12px 30px;
+  padding: 12px 22px;
   border-radius: 40px;
   font-weight: bold;
+  font-size: 15px;
   transition: .4s;
+}
+
+.download-btn i {
+  font-size: 18px;
 }
 
 .download-btn:hover {
@@ -196,6 +211,20 @@ h1 {
   color: white;
   transform: scale(1.05);
 }
+
+.download-btn-google {
+  background: #111827;
+  color: white;
+  border: 1px solid rgba(255,255,255,.2);
+}
+
+.download-btn-google:hover {
+  background: #22c55e;
+  border-color: #22c55e;
+  color: white;
+  transform: scale(1.05);
+}
+/* -------------------------- */
 
 
 @keyframes fadeUp {
@@ -227,6 +256,16 @@ h1 {
     width: 65px;
     height: 65px;
     font-size: 24px;
+  }
+
+  .download-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .download-btn {
+    width: 100%;
+    justify-content: center;
   }
 
 }
