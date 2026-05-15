@@ -16,6 +16,7 @@ body {
   position: relative;
   color: white;
   padding: 30px 15px;
+  width: 100%;
 }
 
 
@@ -263,4 +264,7 @@ h1 {
   .container {
     padding: 30px 16px;
   }
+}
+html, body {
+  overflow-x: hidden;
 }
